@@ -1,0 +1,14 @@
+name: CI para Sprint 1
+
+on:
+    push:
+        branches:
+            -main
+
+jobs:
+    CI_Sprint_1:
+        runs-on: ubuntu-22.04
+        steps:
+            - name: Prueba
+              run: |
+               echo "Prueba"
