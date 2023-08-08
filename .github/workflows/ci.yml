@@ -7,7 +7,7 @@ on:
 
 jobs:
     CI_Sprint_1:
-        runs-on: ubuntu-22.04
+        runs-on: ubuntu-latest
         steps:
             - name: Prueba
               run: echo "Prueba 1"
