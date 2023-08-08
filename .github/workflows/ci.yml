@@ -3,7 +3,7 @@ name: CI para Sprint 1
 on:
     push:
         branches:
-            -main
+            - main
 
 jobs:
     CI_Sprint_1:
