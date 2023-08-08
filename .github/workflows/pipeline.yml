@@ -17,6 +17,8 @@ jobs:
                node-version: 18
             - name: Instalar dependencias
               run: npm install --no-audit --no-fund --no-optional
+            - name: Realizar un build
+              run: npm run build
             - name: Ejecutar los tests
               run: npm test
               
