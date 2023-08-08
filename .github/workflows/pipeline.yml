@@ -10,15 +10,9 @@ jobs:
         runs-on: ubuntu-22.04
         steps:
             - uses: actions/checkout@v3
-              with:
-               fetch-depth: 0
             - uses: actions/setup-node@v3
               with:
-               node-version: 18
-            - name: Instalar dependencias
-              run: npm install --no-audit --no-fund --no-optional
-            - name: Realizar un build
-              run: npm run build
-            - name: Ejecutar los tests
-              run: npm test
+                node-version: 18
+            - run: npm ci
+            - run: npm test
               
