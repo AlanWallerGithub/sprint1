@@ -1,15 +1,15 @@
 {
   "name": "sprint1",
   "version": "1.0.0",
-  "description": "Hacer una ToDo",
+  "description": "Hacer una ToDo list, sprint 1",
   "main": "main.js",
-  "type": "module",
+  "type": "commonjs",
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "test": "jest --verbose"
+    "test": "jest"
   },
-  "author": "Alan Waller",
+  "author": "Alan Waller Ordóñez",
   "license": "ISC"
 }

@@ -1,0 +1,15 @@
+{
+  "name": "sprint1_cli",
+  "version": "1.0.0",
+  "main": "./bin/index.js",
+  "bin": {
+    "sprint1": "bin/index.js"
+  },
+  "keywords": [],
+  "author": "Alan Waller Ordóñez",
+  "license": "ISC",
+  "description": "Un cli para el sprint1",
+  "dependencies": {
+    "yargs": "^17.7.2"
+  }
+}

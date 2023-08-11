@@ -2,7 +2,12 @@
 let toDo = [];
 let numeros = [];
 let completados = [];
-function añadir(elemento) {
+function añadir() {
+
+    let elemento = prompt("Escribe la tarea a añadir");
+
+
+
     let mensajeFinal = "";
     if (!isNaN(Number(elemento))) {
         mensajeFinal = "Debe de ser un string";
@@ -19,16 +24,26 @@ function añadir(elemento) {
             mensajeFinal = "Se ha añadido la tarea nº " + (numeros.length - 1) + ": " + elemento;
         }
     }
-    return mensajeFinal;
+    document.getElementById("resultado").innerHTML = mensajeFinal;
 }
-function completar(numero) {
+function completar() {
+
+    let toDoVisualizado = "";
+
+    for (let i=0;i<toDo.length;i++){
+        toDoVisualizado += "Tarea nº "+numeros[i]+": "+toDo[i]+"\n";
+    }
+
+    let numero = parseInt(prompt("¿Qué tarea quieres marcar como completada? Escribe el número correspondiente. Las tareas disponibles son:\n"+toDoVisualizado));
+
     let mensajeFinal = "";
+    let mensajeError = "";
     if (isNaN(Number(numero))) {
         mensajeFinal = "Debe de ser un número";
     }
     else {
         if (toDo.length == 0 || numeros.length == 0) {
-            return "¡No existe una ToDo list! No puede marcarse un elemento como completado";
+            mensajeError = "¡No existe una ToDo list! No puede marcarse un elemento como completado";
         }
         let i = 0;
         let encontrado = false;
@@ -41,23 +56,37 @@ function completar(numero) {
             }
             else if (numeros[i] == numero && (completados.includes(numero) == true)) {
                 mensajeFinal = "Esa tarea ya ha sido marcada como completada!";
-            }
-            else {
+            }else{
                 mensajeFinal = "¡Esa tarea no existe!";
             }
             i++;
         }
     }
-    return mensajeFinal;
+    if (mensajeError == ""){
+        document.getElementById("resultado").innerHTML = mensajeFinal;
+    } else{
+        document.getElementById("resultado").innerHTML = mensajeError;
+    }
+    
 }
-function eliminar(numero) {
+function eliminar() {
+
+    let toDoVisualizado = "";
+
+    for (let i=0;i<toDo.length;i++){
+        toDoVisualizado += "Tarea nº "+numeros[i]+": "+toDo[i]+"\n";
+    }
+
+    let numero = parseInt(prompt("¿Qué tarea quieres eliminar? Escribe el número correspondiente. Las tareas disponibles son:\n"+toDoVisualizado));
+
     let mensajeFinal = "";
+    let mensajeError = "";
     if (isNaN(Number(numero))) {
         mensajeFinal = "Debe de ser un número";
     }
     else {
         if (toDo.length == 0 || numeros.length == 0) {
-            return "¡No puede eliminarse nada! No existe una ToDo list";
+            mensajeError = "¡No puede eliminarse nada! No existe una ToDo list";
         }
         let i = 0;
         let encontrado = false;
@@ -81,12 +110,29 @@ function eliminar(numero) {
             i++;
         }
     }
-    return mensajeFinal;
+
+    if (mensajeError == ""){
+        document.getElementById("resultado").innerHTML = mensajeFinal;
+    } else{
+        document.getElementById("resultado").innerHTML = mensajeError;
+    }
 }
 function mostrar() {
-    if (toDo.length == 0 || numeros.length == 0) {
-        return "¡No existe una ToDo list!";
+
+    let toDoVisualizadoEnWeb = "";
+
+    for (let i=0;i<toDo.length;i++){
+        toDoVisualizadoEnWeb += "Tarea nº "+numeros[i]+": "+toDo[i]+"<br>";
     }
-    return toDo;
+
+    let mensajeError = "";
+
+    if (toDo.length == 0 || numeros.length == 0) {
+        mensajeError = "¡No existe una ToDo list!";
+    }
+    if (mensajeError == ""){
+        document.getElementById("resultado").innerHTML = toDoVisualizadoEnWeb;
+    } else{
+        document.getElementById("resultado").innerHTML = mensajeError;
+    }
 }
-module.exports = { añadir, completar, eliminar, mostrar, toDo, numeros, completados };
