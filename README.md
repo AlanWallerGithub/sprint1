@@ -43,7 +43,7 @@ El programa actualiza tres arrays, 'toDo', 'numeros' y 'completados', cada vez q
 - Nivel 2:
   
 
-Para ejecutar el CLI, debes acceder a la carpeta ‘sprint1/sprint1_cli/bin’ por la terminar, entonces escribir ‘node index.js --iniciar'. A partir de ahí, se abrirá este menú:
+Para ejecutar el CLI, debes acceder a la carpeta ‘sprint1/sprint1_cli/bin’ por la terminal, entonces escribir ‘node index.js --iniciar'. A partir de ahí, se abrirá este menú:
 
 
 “Hola, esta es tu ToDo list. ¿Qué quieres hacer?
