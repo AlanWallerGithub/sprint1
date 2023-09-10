@@ -21,8 +21,11 @@ En este caso, 'completar(1)' marcaría como completada la tarea de índice 1:
 
 
 0: 'hacer la colada'
+
 1: 'comprar: COMPLETADA'
+
 2: 'limpiar la cocina'
+
 
 Así, del mismo modo 'eliminar(2)' eliminaría la tarea 'limpiar la cocina':
 
